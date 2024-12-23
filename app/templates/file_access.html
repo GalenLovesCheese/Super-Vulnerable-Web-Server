@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Access</title>
+  </head>
+  <body>
+    <h1>Access Files</h1>
+    <form action="/files" method="POST">
+      <label for="session_id">Session ID:</label><br />
+      <input
+        type="text"
+        id="session_id"
+        name="session_id"
+        required
+      /><br /><br />
+      <label for="file_id">File ID:</label><br />
+      <input type="text" id="file_id" name="file_id" required /><br /><br />
+      <button type="submit">Access File</button>
+    </form>
+    <h2>Available Files</h2>
+    <ul>
+      {% for file in files %}
+      <li>{{ file.file_id }} - {{ file.content }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
