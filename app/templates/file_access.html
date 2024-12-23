@@ -3,27 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>File Access</title>
+    <title>File Access - Penny Pinchers Unlimited</title>
+    <link rel="stylesheet" href="../static/css/file_access.css" />
   </head>
   <body>
-    <h1>Access Files</h1>
-    <form action="/files" method="POST">
-      <label for="session_id">Session ID:</label><br />
-      <input
-        type="text"
-        id="session_id"
-        name="session_id"
-        required
-      /><br /><br />
-      <label for="file_id">File ID:</label><br />
-      <input type="text" id="file_id" name="file_id" required /><br /><br />
-      <button type="submit">Access File</button>
-    </form>
-    <h2>Available Files</h2>
-    <ul>
-      {% for file in files %}
-      <li>{{ file.file_id }} - {{ file.content }}</li>
-      {% endfor %}
-    </ul>
+    <div class="top-right">
+      <span class="username">Welcome, {{ session['username'] }}</span>
+      <a href="/logout" class="logout">Logout</a>
+    </div>
+    <div class="file-access-container">
+      <h1>Penny Pinchers Unlimited</h1>
+
+      <p>Access Files</p>
+      <form action="/files" method="POST">
+        <label for="file_id">File ID:</label>
+        <input type="text" id="file_id" name="file_id" required />
+        <button type="submit">Access File</button>
+      </form>
+
+      <h2>Available Files</h2>
+      <ul class="file-list">
+        {% for file in files %}
+        <li>{{ file["file_id"] }} - {{ file["description"] }}</li>
+        {% endfor %}
+      </ul>
+    </div>
   </body>
 </html>

@@ -1,0 +1,158 @@
+/* General body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+  flex-direction: column; /* Ensures content is stacked vertically */
+}
+
+/* Positioning for the top-right username and logout button */
+.top-right {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 14px;
+}
+
+.username {
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.logout {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.logout:hover {
+  background-color: #c0392b;
+}
+
+/* Container for the file access form */
+.file-list {
+  overflow-y: scroll;
+  max-height: 300px;
+  scrollbar-width: thin;
+}
+.file-access-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 60px; /* Adds space for fixed top elements */
+  max-height: 100vh; /* Limits the height to prevent overflow */
+}
+
+/* Main heading styles */
+h1 {
+  color: #2e7d32;
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Text paragraph styles */
+p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Input field styles */
+label {
+  font-size: 14px;
+  color: #555;
+  text-align: left;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Submit button styles */
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Available files heading */
+h2 {
+  color: #333;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+/* List styles for available files */
+ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+ul li {
+  margin: 10px 0;
+  padding: 12px;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+ul li:hover {
+  background-color: #e6e6e6; /* Light hover effect for list items */
+}
+
+/* Additional padding/margin for better spacing */
+.file-access-container p {
+  margin-top: 20px;
+  color: #777;
+  font-size: 14px;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 600px) {
+  .file-access-container {
+    width: 90%; /* Make the container wider on smaller screens */
+  }
+
+  .top-right {
+    top: 15px;
+    right: 15px;
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+}
