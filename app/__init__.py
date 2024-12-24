@@ -1,4 +1,8 @@
 from flask import Flask
+from app.logging_config import configure_logger
+
+# Intitialising logger
+logger = configure_logger()
 
 def create_app():
     app = Flask(__name__)
@@ -9,5 +13,7 @@ def create_app():
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(files_bp)
+
+    logger.info("Server has started")
 
     return app
